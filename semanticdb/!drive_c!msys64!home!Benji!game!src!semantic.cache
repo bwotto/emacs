@@ -1,0 +1,45 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :file "Clock.h"
+      :fsize 183
+      :lastmodtime '(23227 52762 0 0))
+    (semanticdb-table "semanticdb-table"
+      :file "TiledMap.h"
+      :fsize 358
+      :lastmodtime '(23227 52762 0 0))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("SDL2/SDL.h" include (:system-flag t) nil [1 22])
+            ("Clock.h" include nil nil [24 42])
+            ("TiledMap.h" include nil nil [43 64])
+            ("g_pWindow" variable
+               (:pointer 1
+                :type ("SDL_Window" type (:type "class") nil nil))
+                nil [66 88])
+            ("g_pRenderer" variable
+               (:pointer 1
+                :type ("SDL_Renderer" type (:type "class") nil nil))
+                nil [89 115])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [126 135])
+                    ("args" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [136 149]))                  
+                :type "int")
+                nil [117 823]))          
+      :file "main.cpp"
+      :pointmax 824
+      :fsize 873
+      :lastmodtime '(23228 5363 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_c!msys64!home!Benji!game!src!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

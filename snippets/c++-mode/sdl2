@@ -1,0 +1,49 @@
+# -*- mode: snippet -*-
+# name: SDL2
+# key: sdl
+# --
+#include <SDL2/SDL.h>
+
+int main(int argc, char* args[])
+{
+    if(SDL_Init(SDL_INIT_EVERYTHING) < 0)
+    {
+	SDL_Log("Error: %s", SDL_GetError());
+    }
+
+    SDL_Window* pWindow;
+    SDL_Renderer* pRenderer;
+
+    SDL_CreateWindowAndRenderer($1, $2, SDL_WINDOW_SHOWN, &pWindow, &pRenderer);
+
+    if(!pWindow || !pRenderer)
+    {
+	SDL_Log("Error: %s", SDL_GetError());
+	return 1;
+    }
+
+    bool running = true;
+
+    while(running)
+    {
+	SDL_Event event;
+
+	while(SDL_PollEvent &event)
+	{
+	    if(event.type == SDL_QUIT)
+	    {
+		running = false;
+	    }
+	}
+
+	SDL_RenderClear(pRenderer);
+	SDL_RenderPresent(pRenderer);
+    }
+
+    SDL_DestroyWindow(pWindow);
+    SDL_DestroyRenderer(pRenderer);
+
+    SDL_Quit();
+
+    return 0;
+}
